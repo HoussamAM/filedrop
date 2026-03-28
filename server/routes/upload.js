@@ -88,4 +88,22 @@ router.post('/', uploadLimiter, upload.single('file'), async (req, res) => {
     }
 })
 
+const ALLOWED_TYPES = [
+    'image/jpeg', 'image/png', 'image/gif', 'image/webp',
+    'video/mp4', 'video/quicktime',
+    'audio/mpeg', 'audio/wav',
+    'application/pdf',
+    'application/zip',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'text/plain'
+]
+
+//Check inside upload route before uploading to Supabase
+if (!ALLOWED_TYPES.includes(file.mimetype)) {
+    return res.status(400).json({ error: 'File type not allowed' })
+}
+
 export default router

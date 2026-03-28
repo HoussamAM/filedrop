@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import uploadRouter from './routes/upload.js'
 import filesRouter from './routes/files.js'
 import { cleanupExpiredFiles } from './utils/cleanup.js'
+import helmet from 'helmet'
+
 
 dotenv.config()
 
@@ -35,3 +37,5 @@ setInterval(cleanupExpiredFiles, 24 * 60 * 60 * 1000)
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
+
+app.use(helmet())
