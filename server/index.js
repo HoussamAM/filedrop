@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5000
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://filedrop-5vumrh2zl-houssamams-projects.vercel.app'
+        'https://filedrop-5vumrh2zl-houssamams-projects.vercel.app',
+        /https:\/\/filedrop-.*-houssamams-projects\.vercel\.app/
     ]
 }))
 app.use(express.json())
