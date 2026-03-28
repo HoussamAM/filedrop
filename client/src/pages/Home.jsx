@@ -2,8 +2,8 @@ import supabase from '../supabase'
 import { useState } from 'react'
 import axios from 'axios'
 import Dropzone from '../components/Dropzone'
-import ProgressBar from '../components/Progressbar'
-import ShareLink from '../components/Sharelink'
+import ProgressBar from '../components/ProgressBar'
+import ShareLink from '../components/ShareLink'
 
 function Home() {
     const [file, setFile] = useState(null)
