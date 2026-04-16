@@ -1,74 +1,38 @@
-# FileDrop
+# File Sharing App - Server
 
-A full stack file sharing app built with React, Node.js, and Supabase.
+Backend service for a full stack file sharing application. Handles file uploads, link generation, authentication, and cleanup using Supabase.
 
 ## Features
 
-- Upload any file and get a shareable link instantly
-- No account needed — anonymous uploads work out of the box
-- Drag and drop interface with real time upload progress
-- QR code generation for every share link
-- Auto expiring links (24 hours for anonymous, 30 days for logged in users)
-- Download limits (5 for anonymous, unlimited for logged in)
-- Dashboard for logged in users to manage, copy and delete their files
-- Rate limiting to prevent abuse
+- REST API for file uploads and downloads
+- Generates unique, shareable links
+- Supports anonymous and authenticated users
+- File expiration logic (24h anonymous, 30 days authenticated)
+- Download limits enforcement
+- Rate limiting for abuse prevention
 - Automatic cleanup of expired files
+- Integration with Supabase (database, storage, auth)
 
 ## Tech Stack
 
-**Frontend:** React, Vite, Tailwind CSS, React Router  
-**Backend:** Node.js, Express  
-**Database:** PostgreSQL (Supabase)  
-**Storage:** Supabase Storage  
-**Auth:** Supabase Auth  
-**Hosting:** Vercel (frontend), Render (backend)
+- Node.js
+- Express
+- PostgreSQL (Supabase)
+- Supabase Storage
+- Supabase Auth
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
-- A Supabase account
+- Supabase project
 
 ### Installation
 
-1. Clone the repo
-   git clone https://github.com/yourusername/filedrop.git
-   cd filedrop
+Clone the repository and install dependencies:
 
-2. Set up the backend
-   cd server
-   npm install
-   cp .env.example .env
-   # Add your Supabase credentials to .env
-
-3. Set up the frontend
-   cd ../client
-   npm install
-   cp .env.example .env
-   # Add your Supabase credentials to .env
-
-4. Run the backend
-   cd server
-   npm run dev
-
-5. Run the frontend
-   cd client
-   npm run dev
-
-6. Open http://localhost:5173
-
-## Environment Variables
-
-### Server
-PORT=5000
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-CLIENT_URL=http://localhost:5173
-
-### Client
-VITE_API_URL=http://localhost:5000
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
----
+```bash
+git clone https://github.com/HoussamAM/filedrop.git
+cd filedrop/server
+npm install
